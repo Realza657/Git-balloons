@@ -1,0 +1,148 @@
+@import "normalize.css";
+@import "reset.css";
+html {
+  font-size: 62.5%;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  font-weight: 400;
+  color: #777777;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  padding: 5rem;
+}
+
+.container {
+  background: #f7f7f7;
+}
+
+.header {
+  height: 95vh;
+  background: linear-gradient(90deg, rgba(231, 182, 137, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url(../img/header-background.jpg) center/cover no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 84%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 84%);
+  position: relative;
+}
+.header__logo {
+  height: 7rem;
+  width: 5.6rem;
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
+}
+.header__box-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.header__text-box {
+  color: white;
+  margin-bottom: 5rem;
+}
+
+.btn:link, .btn:visited {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: white;
+  color: #777777;
+  padding: 1.5rem 4rem;
+  border-radius: 5rem;
+  display: inline-block;
+  transition: 0.3s all;
+  position: relative;
+}
+.btn_animated {
+  animation: button-appearing 2s ease 1s;
+  animation-fill-mode: backwards;
+}
+.btn:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+}
+.btn:hover::after {
+  opacity: 0;
+  transform: scaleX(1.2) scaleY(1.4);
+}
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 5rem;
+  background: white;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.text-box {
+  width: 100%;
+}
+.text-box__main {
+  display: block;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  animation: fromLeftToRight 2s ease 1s;
+  backface-visibility: hidden;
+}
+.text-box__subtext {
+  display: block;
+  font-size: 4rem;
+  font-weight: 100;
+  letter-spacing: 0.5rem;
+  animation: fromRightToLeft 2s ease 1s;
+  backface-visibility: hidden;
+}
+
+@keyframes button-appearing {
+  0% {
+    transform: translateY(8rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fromLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fromRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=style.css.map */
